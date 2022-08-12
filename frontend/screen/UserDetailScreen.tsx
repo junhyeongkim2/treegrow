@@ -4,6 +4,7 @@ import { Text } from "react-native";
 
 export default function MainScreen() {
   return (
+    //test
     <View style={div_styles.container}>
       <View style={div_styles.header}>
         <Text>상세 페이지</Text>
