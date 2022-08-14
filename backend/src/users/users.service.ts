@@ -12,4 +12,8 @@ export class UsersService {
   async getAll(): Promise<Users[]> {
     return this.userRepository.find();
   }
+
+  async getOne(userId: number): Promise<Users> {
+    return this.userRepository.findOneBy({ userId });
+  }
 }
