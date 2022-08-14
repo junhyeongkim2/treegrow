@@ -12,7 +12,7 @@ export class UsersController {
     return this.usersService.getAll();
   }
   @Get('/:id')
-  getOne(@Param('id') id: number): Promise<Users> {
+  getOne(@Param('id') id: string): Promise<Users> {
     return this.usersService.getOne(id);
   }
 
