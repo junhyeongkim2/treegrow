@@ -57,17 +57,5 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+<img width="1216" alt="Screen Shot 2022-08-15 at 3 21 18 AM" src="https://user-images.githubusercontent.com/52617204/184549903-d4fa0bb0-7e07-4f93-8421-9c6fdc5bc882.png">
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
