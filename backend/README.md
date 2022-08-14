@@ -57,4 +57,5 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+<img width="1216" alt="Screen Shot 2022-08-15 at 3 21 18 AM" src="https://user-images.githubusercontent.com/52617204/184549903-d4fa0bb0-7e07-4f93-8421-9c6fdc5bc882.png">
 
