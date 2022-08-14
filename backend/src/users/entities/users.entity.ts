@@ -1,4 +1,14 @@
-import { Entity, Column, PrimaryGeneratedColumn, PrimaryColumn } from 'typeorm';
+import { Type } from 'class-transformer';
+import { IsISO8601 } from 'class-validator';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  PrimaryColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  Timestamp,
+} from 'typeorm';
 
 @Entity()
 export class Users {
@@ -10,4 +20,10 @@ export class Users {
 
   @Column({ type: 'varchar', length: 255, comment: 'userPassword' })
   userPassword: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }
