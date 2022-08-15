@@ -1,5 +1,7 @@
+import { InjectQueue } from '@nestjs/bull';
 import { Inject, Injectable } from '@nestjs/common';
-import { Equal, Like, Repository } from 'typeorm';
+import { Queue } from 'bull';
+import { Repository } from 'typeorm';
 import { createCommitsDto } from './dto/commits-create.dto';
 import { Commits } from './entities/commits.entity';
 
@@ -8,6 +10,7 @@ export class CommitsService {
   constructor(
     @Inject('COMMIT_REPOSITORY')
     private commitsRepository: Repository<Commits>,
+    @InjectQueue('commits') private commitsQueue: Queue,
   ) {}
 
   async getAll(): Promise<Commits[]> {
@@ -18,7 +21,10 @@ export class CommitsService {
     return await this.commitsRepository.findBy({ userId });
   }
 
-  async create(commitData: createCommitsDto): Promise<Commits> {
-    return this.commitsRepository.save(commitData);
+  async create(commitData: createCommitsDto) {
+    const job = await this.commitsQueue.add('transcode', {
+      savecommit: commitData,
+    });
+    return job;
   }
 }
