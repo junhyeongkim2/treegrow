@@ -2,7 +2,7 @@ import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiOperation, ApiCreatedResponse } from '@nestjs/swagger';
 import { Users } from 'src/users/entities/users.entity';
 import { CommitsService } from './commits.service';
-import { createCommitsDto } from './dto/commits-create.dto';
+import { CreateCommitsDto } from './dto/commits-create.dto';
 import { Commits } from './entities/commits.entity';
 
 @Controller('commits')
@@ -33,7 +33,7 @@ export class CommitsController {
   @ApiOperation({ summary: '커밋 생성 API', description: '커밋을 생성한다.' })
   @ApiCreatedResponse({ description: '커밋 생성.', type: Commits })
   @Post()
-  create(@Body() commitData: createCommitsDto) {
+  create(@Body() commitData: CreateCommitsDto) {
     return this.commitsService.create(commitData);
   }
 }

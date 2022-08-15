@@ -4,7 +4,7 @@ import { Job, Queue } from 'bull';
 import { create } from 'domain';
 import { async } from 'rxjs';
 import { Repository } from 'typeorm';
-import { createCommitsDto } from '../dto/commits-create.dto';
+import { CreateCommitsDto } from '../dto/commits-create.dto';
 import { Commits } from '../entities/commits.entity';
 //import { MyLogger } from 'src/logger/logger.serivce';
 

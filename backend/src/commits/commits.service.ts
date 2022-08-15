@@ -2,7 +2,7 @@ import { InjectQueue } from '@nestjs/bull';
 import { Inject, Injectable } from '@nestjs/common';
 import { Queue } from 'bull';
 import { Repository } from 'typeorm';
-import { createCommitsDto } from './dto/commits-create.dto';
+import { CreateCommitsDto } from './dto/commits-create.dto';
 import { Commits } from './entities/commits.entity';
 
 @Injectable()
@@ -21,7 +21,7 @@ export class CommitsService {
     return await this.commitsRepository.findBy({ userId });
   }
 
-  async create(commitData: createCommitsDto) {
+  async create(commitData: CreateCommitsDto) {
     const job = await this.commitsQueue.add('transcode', {
       savecommit: commitData,
     });
