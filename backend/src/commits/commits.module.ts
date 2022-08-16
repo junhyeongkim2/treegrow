@@ -13,7 +13,7 @@ import { CommitsConsumer } from './Queue/commits.consumer';
     BullModule.registerQueue({
       name: 'commits',
       redis: {
-        host: 'localhost',
+        host: 'redis-server',
         port: 6379,
       },
     }),
